@@ -1,11 +1,11 @@
 # DjangoWeb
-# Descripción
-# Versión en español:
+## Descripción
+### Versión en español:
 Actualización 16/04/2023
 
 Este proyecto consiste en una página web creada con Django. Actualmente cuenta con una tabla de usuarios y un mini-core que permite comparar dos fechas en contratos que pertenecen a ciertos clientes. La presentación visual del sitio se ha personalizado con HTML y CSS.
 
-# Traducción al inglés:
+### Traducción al inglés:
 
 Update 16/04/2023
 
