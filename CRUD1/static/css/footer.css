@@ -1,10 +1,24 @@
+:root {
+  --vosc: #674ab3;
+  --vmedio: #a348a6;
+  --violeta: #9f63c4;
+  --vcla: #9075d8;
+  --vrosa: #cea2d7;
+  --orcuro: #333;
+  --blanco: #fff;
+  --violeta: #9502ffcc;
+  --fuxia: #bb017acc;
+}
+
 footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #333;
-  color: #fff;
+  background-image: linear-gradient(var(--violeta), var(--fuxia));
+  /* background-color: var(--vosc); */
+  color: var(--blanco);
   padding: 20px;
+  margin-top: 10%;
 }
 
 .footer-section {
@@ -27,7 +41,7 @@ footer {
 }
 
 .footer-section a {
-  color: #fff;
+  color: var(--blanco);
   text-decoration: none;
 }
 

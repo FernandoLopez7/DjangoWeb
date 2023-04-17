@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}" />
+</head>
+<body>
+  <header>
+    <div class="nav-bg">
+      <nav class="navegacion-principal contenedor">
+        <a href="{%url 'reporte'%}">Filtro</a>
+        <a href="{%url 'clientes'%}">Cliente</a>
+        <a href="{%url 'contratos'%}">Contratos</a>
+        <div class="sep"></div>
+      </nav>
+    </div>
+  </header>
+  <div class="table-wrapper">
+    <table class="fl-table">
+      <thead>
+        <tr>
+          <tr>
+            {% for titulo in campo %}
+                <th>{{ titulo.verbose_name.title }}</th>
+            {% endfor %}
+        </tr>
+        </tr>
+      </thead>
+      <tbody>
+        {% for elementos in contratos %}
+        <tr>
+          <td>{{elementos.id}}</td>
+          <td>{{elementos.cliente.nombre}}</td>
+          <td>{{elementos.descripcion}}</td>
+          <td>{{elementos.precio}}</td>
+          <td>{{elementos.fecha_creacion}}</td>
+          <td>{{elementos.fecha_edicion}}</td>
+        </tr>
+  
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

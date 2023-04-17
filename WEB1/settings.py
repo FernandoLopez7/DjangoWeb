@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+# Para el inicio de sesion personalizado
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,8 +78,15 @@ WSGI_APPLICATION = 'WEB1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        # Para la nueva base de datos en postgreSQL
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'WEB',
+        'USER': 'postgres',
+        'PASSWORD': 'gabely1234',
+        'HOST': '127.0.0.1',
+        'DATABASE_PORT': '5432',
     }
 }
 
@@ -122,3 +131,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Para el inicio de sesion personalizado
+
+LOGIN_URL = 'login_or_register'
+LOGIN_REDIRECT_URL = reverse_lazy('index')

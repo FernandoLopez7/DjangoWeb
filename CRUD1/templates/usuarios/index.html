@@ -52,20 +52,31 @@
     </div>
   </body>
 </html> -->
-{% load static %} {% block titulo%} Index {%endblock%} {% block contenido%}
-<link rel="stylesheet" type="text/css" href="{% static '/table.css' %}" />
+{% load static %}
+{% block titulo%} Index {%endblock%}
+{% block estilos%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}" />
+{%endblock%}
+
+{% block contenido%}
+
 <h1>INDEX</h1>
-<a href="create" class="btn btn-white">Crear Nuevo</a>
+<a href="{%url 'usercreate'%}" class="btn btn-white">Crear Nuevo</a>
 <div class="table-wrapper">
   <table class="fl-table">
     <thead>
       <tr>
-        <th>Id</th>
+        <!-- <th>Id</th>
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Nombre de usuario</th>
         <th>Correo electronico</th>
-        <th>Telefono</th>
+        <th>Telefono</th> -->
+        <tr>
+          {% for titulo in campo %}
+              <th>{{ titulo.verbose_name.title }}</th>
+          {% endfor %}
+      </tr>
       </tr>
     </thead>
     <tbody>
@@ -78,13 +89,9 @@
         <td>{{elementos.email}}</td>
         <td>{{elementos.tfno}}</td>
         <th>
-          <a href="{%url 'details' elementos.id%}" class="btn btn-white"
-            >Ver mas</a
-          >
-          <a href="{%url 'edit' elementos.id%}" class="btn btn-white">Editar</a>
-          <a href="{%url 'delete' elementos.id%}" class="btn btn-white"
-            >Eliminar</a
-          >
+          <a href="{%url 'userdetails' elementos.id%}" class="btn btn-white">Ver mas</a>
+          <a href="{%url 'useredit' elementos.id%}" class="btn btn-white">Editar</a>
+          <a href="{%url 'userdelete' elementos.id%}" class="btn btn-white">Eliminar</a>
         </th>
       </tr>
 

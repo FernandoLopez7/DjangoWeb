@@ -18,5 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('CRUD1.urls'))
+    path('', include('CRUD1.urls')),
+    # Para usar el inicio de sesion pretederminado de Django
+    # path('accounts/',include('django.contrib.auth.urls')),
 ]

@@ -6,10 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block titulo %} {% endblock %}</title>
+    {% block estilos %} {% endblock %}
   </head>
+  <style>
+    
+    body{
+      margin: 0;
+      background: url('https://i.pinimg.com/originals/1a/f6/89/1af689d42bdb7686df444f22925f9e89.gif') no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+  </style>
   {% include 'predeterminados/header.html' %}
   <body>
+    
     {% block contenido %} {% endblock %}
+    {% include 'predeterminados/footer.html' %}
   </body>
-  {% include 'predeterminados/footer.html' %}
 </html>

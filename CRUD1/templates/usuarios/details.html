@@ -16,12 +16,18 @@
     <p>Telefono: {{usuario.tfno}}</p>
 </body>
 </html> -->
-{% load static %} {% block titulo%} Details {%endblock%} {% block contenido%}
-<link rel="stylesheet" type="text/css" href="{% static '/profile.css' %}" />
+{% load static %}
+{% block titulo%} Details {%endblock%}
+{% block estilos%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}" />
+{%endblock%}
+
+{% block contenido%}
+
 <div class="body">
   <div class="container">
     <div class="box">
-      <img src="C:/Users/gabol/Documents/Universidad/Ingenieria Web/Progreso 1/CRUD/WEB1/unnamed.jpg" alt="" />
+      <img src="{% static 'img/unnamed.jpg'%}" alt="" />
       <ul>
         <li>{{usuario.nombre_usuario}}</li>
         <li>{{usuario.email}}</li>
