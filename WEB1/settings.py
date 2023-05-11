@@ -10,6 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+# from decouple import env
+
+import environ
+
+# Read .env file
+env = environ.Env()
+environ.Env.read_env()
+
+
 from pathlib import Path
 # Para el inicio de sesion personalizado
 from django.urls import reverse_lazy
@@ -22,10 +31,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-pt29i!%qse6s^$##^&&242kxaxu#1a9e8&%s9o_&re5n&3oyyl'
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(env("DEBUG"))
 
 ALLOWED_HOSTS = []
 
@@ -83,11 +92,11 @@ DATABASES = {
         # 'NAME': BASE_DIR / 'db.sqlite3',
         # Para la nueva base de datos en postgreSQL
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'WEB',
-        'USER': 'postgres',
-        'PASSWORD': 'gabely1234',
-        'HOST': '127.0.0.1',
-        'DATABASE_PORT': '5432',
+        'NAME': env("DB_NAME"),
+        'USER': env("DB_USER"),
+        'PASSWORD': env("DB_PASSWORD"),
+        'HOST': env("DB_HOST"),
+        'DATABASE_PORT': env("DB_DATABASE_PORT"),
     }
 }
 
