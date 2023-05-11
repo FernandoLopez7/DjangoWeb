@@ -1,0 +1,151 @@
+[
+    {
+        "model": "CRUD1.usuario",
+        "pk": 1,
+        "fields": {
+            "nombre": "Fernando",
+            "apellido": "Lopez",
+            "nombre_usuario": "fer",
+            "email": "fer@gmail.com",
+            "tfno": "0954321096"
+        }
+    },
+    {
+        "model": "CRUD1.usuario",
+        "pk": 2,
+        "fields": {
+            "nombre": "Gabriel",
+            "apellido": "Pereza",
+            "nombre_usuario": "gar",
+            "email": "gar@gmail.com",
+            "tfno": "0954321084"
+        }
+    },
+    {
+        "model": "CRUD1.usuario",
+        "pk": 3,
+        "fields": {
+            "nombre": "Isis",
+            "apellido": "Rueda",
+            "nombre_usuario": "is",
+            "email": "isi@gmail.com",
+            "tfno": "0954321095"
+        }
+    },
+    {
+        "model": "CRUD1.usuario",
+        "pk": 4,
+        "fields": {
+            "nombre": "Maria",
+            "apellido": "Lopez",
+            "nombre_usuario": "mar",
+            "email": "mar@gmail.com",
+            "tfno": "0954321096"
+        }
+    },
+    {
+        "model": "CRUD1.cliente",
+        "pk": 1,
+        "fields": {
+            "nombre": "Marco"
+        }
+    },
+    {
+        "model": "CRUD1.cliente",
+        "pk": 2,
+        "fields": {
+            "nombre": "Ricardo"
+        }
+    },
+    {
+        "model": "CRUD1.cliente",
+        "pk": 3,
+        "fields": {
+            "nombre": "Maria"
+        }
+    },
+    {
+        "model": "CRUD1.cliente",
+        "pk": 4,
+        "fields": {
+            "nombre": "Jorge"
+        }
+    },
+    {
+        "model": "CRUD1.contrato",
+        "pk": 1,
+        "fields": {
+            "cliente": 1,
+            "descripcion": "Mucho dinero",
+            "precio": "10.00",
+            "fecha_creacion": "2022-12-05",
+            "fecha_edicion": "2023-04-15T20:44:58.345Z"
+        }
+    },
+    {
+        "model": "CRUD1.contrato",
+        "pk": 2,
+        "fields": {
+            "cliente": 1,
+            "descripcion": "Mas dinero SSS",
+            "precio": "15.21",
+            "fecha_creacion": "2022-10-15",
+            "fecha_edicion": "2023-04-15T18:35:46.224Z"
+        }
+    },
+    {
+        "model": "CRUD1.contrato",
+        "pk": 4,
+        "fields": {
+            "cliente": 1,
+            "descripcion": "Algo de dinero",
+            "precio": "11.00",
+            "fecha_creacion": "2023-04-15",
+            "fecha_edicion": "2023-04-15T21:30:06.224Z"
+        }
+    },
+    {
+        "model": "CRUD1.contrato",
+        "pk": 5,
+        "fields": {
+            "cliente": 2,
+            "descripcion": "Poco de dinero",
+            "precio": "1.00",
+            "fecha_creacion": "2023-02-15",
+            "fecha_edicion": "2023-04-16T02:34:06.224Z"
+        }
+    },
+    {
+        "model": "CRUD1.contrato",
+        "pk": 6,
+        "fields": {
+            "cliente": 3,
+            "descripcion": "Comida de ganado",
+            "precio": "100.00",
+            "fecha_creacion": "2023-01-15",
+            "fecha_edicion": "2023-04-17T03:53:02.372Z"
+        }
+    },
+    {
+        "model": "CRUD1.contrato",
+        "pk": 7,
+        "fields": {
+            "cliente": 4,
+            "descripcion": "Camisetas",
+            "precio": "95.00",
+            "fecha_creacion": "2023-03-10",
+            "fecha_edicion": "2023-04-17T03:53:26.316Z"
+        }
+    },
+    {
+        "model": "CRUD1.contrato",
+        "pk": 8,
+        "fields": {
+            "cliente": 2,
+            "descripcion": "hgjhfr",
+            "precio": "1.00",
+            "fecha_creacion": "2023-05-08",
+            "fecha_edicion": "2023-05-09T00:03:53.662Z"
+        }
+    }
+]
