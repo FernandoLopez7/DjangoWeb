@@ -89,9 +89,13 @@
         <td>{{elementos.email}}</td>
         <td>{{elementos.tfno}}</td>
         <th>
+          {% if user.is_authenticated and perms.CRUD1.can_edit_user %}
           <a href="{%url 'userdetails' elementos.id%}" class="btn btn-white">Ver mas</a>
           <a href="{%url 'useredit' elementos.id%}" class="btn btn-white">Editar</a>
           <a href="{%url 'userdelete' elementos.id%}" class="btn btn-white">Eliminar</a>
+          {% else %}
+          <a href="{%url 'userdetails' elementos.id%}" class="btn btn-white">Ver mas</a>
+          {% endif %}
         </th>
       </tr>
 

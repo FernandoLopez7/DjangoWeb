@@ -1,12 +1,15 @@
 from django.shortcuts import render, redirect
 from .models import Usuario, Cliente, Contrato
 from .form import UsuarioForm, UserRegisterForm, UserLoginForm, ClienteForm, ContratoForm, DateFilterForm
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth import logout, authenticate, login
 
 
 from django.contrib import messages
 
+
+def can_edit_user(user):
+    return user.has_perm('CRUD1.can_edit_user')
 
 # Create your views here.
 
@@ -14,7 +17,7 @@ from django.contrib import messages
 def index(request):
     usuarios = Usuario.objects.all()
     campo = usuarios.model._meta.fields
-    return render(request, "usuarios/index.html", {"usuarios": usuarios, "campo": campo})
+    return render(request, "usuarios/index.html", {"usuarios": usuarios, "campo": campo, "user": request.user})
 
 
 @login_required
@@ -30,7 +33,8 @@ def userdetails(request, id):
     usuario = Usuario.objects.get(id=id)
     return render(request, "usuarios/details.html", {"usuario": usuario})
 
-
+# @permission_required('CRUD1.can_edit_user')
+@user_passes_test(can_edit_user, login_url='index')
 @login_required
 def useredit(request, id):
     usuario = Usuario.objects.get(id=id)
