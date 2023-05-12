@@ -28,7 +28,6 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('contracts/', RedirectView.as_view(url='/app/')), # Redirect on root (works on local environment)
     path('', RedirectView.as_view(url='/app/')), # Redirect on root (works on production environment with gunicorn)
 ]
 
