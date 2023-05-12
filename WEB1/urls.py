@@ -16,9 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.views.generic import RedirectView
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('CRUD1.urls')),
     # Para usar el inicio de sesion pretederminado de Django
     # path('accounts/',include('django.contrib.auth.urls')),
 ]
+
+urlpatterns += [
+    path('contracts/', RedirectView.as_view(url='/app/')), # Redirect on root (works on local environment)
+    path('', RedirectView.as_view(url='/app/')), # Redirect on root (works on production environment with gunicorn)
+]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
