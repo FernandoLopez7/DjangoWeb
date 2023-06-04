@@ -60,22 +60,15 @@
 
 {% block contenido%}
 
-<h1>INDEX</h1>
 <a href="{%url 'usercreate'%}" class="btn btn-white">Crear Nuevo</a>
 <div class="table-wrapper">
   <table class="fl-table">
     <thead>
       <tr>
-        <!-- <th>Id</th>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Nombre de usuario</th>
-        <th>Correo electronico</th>
-        <th>Telefono</th> -->
-        <tr>
-          {% for titulo in campo %}
-              <th>{{ titulo.verbose_name.title }}</th>
-          {% endfor %}
+      <tr>
+        {% for titulo in campo %}
+        <th>{{ titulo.verbose_name.title }}</th>
+        {% endfor %}
       </tr>
       </tr>
     </thead>

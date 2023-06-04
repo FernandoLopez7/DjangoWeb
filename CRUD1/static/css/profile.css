@@ -2,10 +2,14 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #ddd;
+  background: transparent;
+  border: 2px solid #e1ffff80;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px #00000080;
   align-items: center;
   justify-content: center;
-  margin: 10px;
+  margin: 50px;
+  border-radius: 20px;
 }
 
 * {
