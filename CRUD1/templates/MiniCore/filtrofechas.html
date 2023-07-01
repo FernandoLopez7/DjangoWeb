@@ -16,6 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
   }
 
   .ContenedorT input {
@@ -24,7 +25,7 @@
 </style>
 {%endblock%}
 {% block contenido%}
-<div class="col-md-4 my-5">
+<div>
   <form method="get" class="ContenedorT">
     {% csrf_token %} {{ form }}
     <button class="button" type="submit">Buscar</button>
@@ -35,26 +36,26 @@
   <table class="fl-table">
     <thead>
       <tr>
-        <th>Cliente</th>
-        <th>Contratos</th>
-        <th>Costo</th>
+        <th>Vendedore</th>
+        <th>Ventas</th>
+        <th>Monto</th>
       </tr>
     </thead>
     <tbody>
       {% for result in results %}
       <tr>
-        <td>{{ result.client.nombre }}</td>
-        <td>{{ result.contratos }}</td>
-        <td>{{ result.total_price|floatformat:2 }}</td>
+        <td>{{ result.vendedor.nombre }}</td>
+        <td>{{ result.ventas }}</td>
+        <td>{{ result.total_monto|floatformat:2 }}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
 </div>
-<div class="horizontal-span ContenedorT">
-  <span>Clientes: {{ summary.clients }}</span>
-  <span>Contratos: {{ summary.contratos }}</span>
-  <span>Monto total: {{ summary.total_price|floatformat:2 }}</span>
+<div class="ContenedorT">
+  <span>Vendedores: {{ summary.vendedores }}</span>
+  <span>Ventas: {{ summary.ventas }}</span>
+  <span>Monto total: {{ summary.total_monto|floatformat:2 }}</span>
 </div>
 {% else %}
 <div role="alert">

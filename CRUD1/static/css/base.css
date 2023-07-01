@@ -31,6 +31,7 @@ body {
     var(--fuxia)
   );
   list-style: none;
+  margin-bottom: 3rem;
 }
 
 .contenedor {

@@ -17,7 +17,6 @@
 
 .fl-table {
   border-radius: 5px;
-  font-size: 12px;
   font-weight: normal;
   border: none;
   border-collapse: collapse;
@@ -37,7 +36,6 @@
 
 .fl-table td {
   border-right: 1px solid #f8f8f8;
-  font-size: 12px;
 }
 
 .fl-table thead th {
@@ -50,8 +48,15 @@
   background: #324960;
 }
 
+/* Afecta a las pares "even" 2n*/
 .fl-table tr:nth-child(even) {
-  background-image: linear-gradient(#0fffff80, transparent);
+  background-image: radial-gradient(#0fffff80, transparent);
+}
+
+/* Afecta a las impares "odd" 2n+1*/
+.fl-table tr:nth-child(odd) {
+  background-image: radial-gradient(#324960, transparent);
+  color: white;
 }
 
 .btn:link,
@@ -153,4 +158,25 @@
     margin: 10px auto;
     display: block;
   }
+}
+
+/* Mini Core */
+
+.ContenedorT {
+  margin: 2%;
+  background: transparent;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px 0 #00000080;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.ContenedorT input {
+  margin-bottom: 10px;
 }

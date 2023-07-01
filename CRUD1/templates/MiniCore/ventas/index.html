@@ -1,10 +1,11 @@
 {% extends "predeterminados/base.html"%}
 {% load static %}
-{% block titulo%} Contratos {%endblock%}
+{% block titulo%} Ventas {%endblock%}
 {% block estilos%}
 <link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}" />
 {%endblock%}
 {% block contenido%}
+<a href="{%url 'ventascreate'%}" class="btn btn-white">Crear Nuevo</a>
 <div class="table-wrapper">
   <table class="fl-table">
     <thead>
@@ -17,12 +18,13 @@
       </tr>
     </thead>
     <tbody>
-      {% for elementos in contratos %}
+      {% for elementos in ventas %}
       <tr>
         <td>{{elementos.id}}</td>
-        <td>{{elementos.cliente.nombre}}</td>
-        <td>{{elementos.descripcion}}</td>
-        <td>{{elementos.precio}}</td>
+        <td>{{elementos.vendedor.nombre}}</td>
+        <td>{{elementos.producto.nombre}}</td>
+        <td>{{elementos.cantidad}}</td>
+        <td>{{elementos.monto}}</td>
         <td>{{elementos.fecha_creacion}}</td>
         <td>{{elementos.fecha_edicion}}</td>
       </tr>
